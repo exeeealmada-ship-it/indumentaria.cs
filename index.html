@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SILMAR | Moda en Oberá</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f7f5;
+            color: #222;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #222;
+            margin-left: 25px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #9b6b55;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 100px 20px 40px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            letter-spacing: 12px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #222;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: #e9d8cd;
+        }
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #777;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-button {
+            display: block;
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 11px;
+            border-radius: 25px;
+            text-decoration: none;
+        }
+
+        .about {
+            background: #eee7e2;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 7px;
+            color: #bbb;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 11px;
+            }
+
+            .hero-content h1 {
+                letter-spacing: 6px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .product img {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SILMAR</div>
+
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#productos">COLECCIÓN</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#contacto">CONTACTO</a>
+    </nav>
+</header>
+
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>SILMAR</h1>
+
+        <p>Moda que va con vos.</p>
+
+        <a href="#productos" class="button">
+            VER COLECCIÓN
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="productos">
+
+    <div class="title">
+
+        <h2>Nueva colección</h2>
+
+        <p>Descubrí nuestros favoritos de temporada</p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Remera Essential</h3>
+
+                <p>Remera básica de algodón.</p>
+
+                <br>
+
+                <div class="price">$18.000</div>
+
+                <a class="product-button" href="#contacto">
+                    Consultar
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Buzo Oversize</h3>
+
+                <p>Diseño cómodo y moderno.</p>
+
+                <br>
+
+                <div class="price">$35.000</div>
+
+                <a class="product-button" href="#contacto">
+                    Consultar
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Jean Classic</h3>
+
+                <p>Jean de corte clásico.</p>
+
+                <br>
+
+                <div class="price">$42.000</div>
+
+                <a class="product-button" href="#contacto">
+                    Consultar
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80">
+
+            <div class="product-info">
+
+                <h3>Campera Urban</h3>
+
+                <p>Campera para todos los días.</p>
+
+                <br>
+
+                <div class="price">$58.000</div>
+
+                <a class="product-button" href="#contacto">
+                    Consultar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="nosotros">
+
+    <div class="title">
+
+        <h2>Sobre Silmar</h2>
+
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            Somos una tienda de ropa ubicada en Oberá, Misiones.
+            Creamos Silmar para ofrecer prendas modernas, cómodas
+            y pensadas para acompañar tu estilo todos los días.
+        </p>
+
+        <br>
+
+        <p>
+            Encontrá prendas para todos los momentos y descubrí
+            nuestra nueva colección.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contacto">
+
+    <div class="title">
+
+        <h2>Contactanos</h2>
+
+        <p>Estamos para ayudarte</p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <p>📍 Oberá, Misiones</p>
+
+        <p>📱 WhatsApp: 3755-123456</p>
+
+        <p>📷 Instagram: @silmar.moda</p>
+
+        <p>🕐 Lunes a sábado: 9:00 a 13:00 / 16:00 a 20:30</p>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/5493755123456"
+            target="_blank">
+            💬 HABLAR POR WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>SILMAR</h3>
+
+    <p>Moda que va con vos.</p>
+
+    <p>Oberá, Misiones · Argentina</p>
+
+    <p>© 2026 Silmar - Página demostrativa</p>
+
+</footer>
+
+</body>
+</html>
